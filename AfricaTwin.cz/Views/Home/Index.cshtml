@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Úvod";
+}
+
+<div class="jumbotron">
+    <h1>AfricaTwin.cz</h1>
+    <p class="lead">Nová verze webu AfricaTwin.cz postavená na technologii ASP.NET MVC 4</p>
+    <p><a href="http://www.africatwin.cz" class="btn btn-primary btn-large">Navštívit starý web &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Aktuální akce</h2>
+        <p>
+            Tady byse mohlo zobrazovat několik nejnovějších akcí, podobně jako na starém webu.
+        </p>
+        <p><a class="btn btn-default" href="http://www.africatwin.cz/akce.asp">Více &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Nejnovější články</h2>
+        <p>Výčet několika nejaktuálnějších článků, opět podobně jako na starém webu</p>
+        <p><a class="btn btn-default" href="http://www.africatwin.cz/clanky.asp">Více &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>TechBox</h2>
+        <p>Nejnovější záznamy v TechBoxu</p>
+        <p>@Html.ActionLink("Více »", "TechBox", "TechBox", new { }, new { @class = "btn btn-default" })</p> 
+    </div>
+</div>
