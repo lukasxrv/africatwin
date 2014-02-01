@@ -1,0 +1,1363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="www_africatwin_czModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+          <Property Name="User_Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_akce' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_akce">
+          <Key>
+            <PropertyRef Name="id_akce" />
+            <PropertyRef Name="insert_date" />
+          </Key>
+          <Property Name="id_akce" Type="int" Nullable="false" />
+          <Property Name="nazev" Type="nvarchar" MaxLength="50" />
+          <Property Name="povidani" Type="ntext" />
+          <Property Name="id_kamene" Type="int" />
+          <Property Name="termin_od" Type="datetime" />
+          <Property Name="termin_do" Type="datetime" />
+          <Property Name="insert_date" Type="datetime" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="upoutavka" Type="ntext" />
+          <Property Name="uzavreno" Type="nvarchar" MaxLength="50" />
+          <Property Name="formular" Type="nvarchar" MaxLength="50" />
+          <Property Name="formular_dny" Type="nvarchar" MaxLength="50" />
+          <Property Name="formular_bydleni" Type="nvarchar" MaxLength="50" />
+          <Property Name="formular_jezdeni" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="data_5" Type="ntext" />
+          <Property Name="data_6" Type="int" />
+          <Property Name="data_7" Type="datetime" />
+          <Property Name="formular_penze" Type="nvarchar" MaxLength="50" />
+          <Property Name="formular_deti" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_atav_ucast' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_atav_ucast">
+          <Key>
+            <PropertyRef Name="akce" />
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="akce" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="pocet_osob" Type="int" />
+          <Property Name="d_1" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_2" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_3" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_4" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_5" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_6" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_7" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_8" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_9" Type="nvarchar" MaxLength="50" />
+          <Property Name="d_10" Type="nvarchar" MaxLength="50" />
+          <Property Name="jezdeni" Type="nvarchar" MaxLength="50" />
+          <Property Name="insert_date" Type="datetime" />
+          <Property Name="ubytovani" Type="nvarchar" MaxLength="50" />
+          <Property Name="pocet_deti" Type="int" />
+          <Property Name="ucast_dny" Type="nvarchar" MaxLength="50" />
+          <Property Name="penze_dny" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_counter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_counter">
+          <Key>
+            <PropertyRef Name="count_id" />
+            <PropertyRef Name="datum" />
+          </Key>
+          <Property Name="count_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="datum" Type="datetime" Nullable="false" />
+          <Property Name="info" Type="nvarchar" MaxLength="1000" />
+          <Property Name="timer_info" Type="nchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_dokumenty' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_dokumenty">
+          <Key>
+            <PropertyRef Name="id_dokumentu" />
+            <PropertyRef Name="id_skupiny" />
+            <PropertyRef Name="dat_vlozeni" />
+          </Key>
+          <Property Name="id_dokumentu" Type="int" Nullable="false" />
+          <Property Name="id_skupiny" Type="int" Nullable="false" />
+          <Property Name="dat_vlozeni" Type="datetime" Nullable="false" />
+          <Property Name="nazev" Type="nvarchar" MaxLength="50" />
+          <Property Name="popis" Type="nvarchar" MaxLength="512" />
+          <Property Name="nazev_puvodni" Type="nvarchar" MaxLength="50" />
+          <Property Name="nazev_systemovy" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="typ" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_emaily' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_emaily">
+          <Key>
+            <PropertyRef Name="email_id" />
+            <PropertyRef Name="datum" />
+          </Key>
+          <Property Name="email_id" Type="int" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="jmeno" Type="nvarchar" MaxLength="50" />
+          <Property Name="datum" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_hledat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_hledat">
+          <Key>
+            <PropertyRef Name="hledat_id" />
+          </Key>
+          <Property Name="hledat_id" Type="int" Nullable="false" />
+          <Property Name="strHledat" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="datum" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_hodnoceni' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_hodnoceni">
+          <Key>
+            <PropertyRef Name="polozka_id" />
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="polozka_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="polozka_pod_id" Type="int" />
+          <Property Name="insert_date" Type="datetime" />
+          <Property Name="hodnoceni" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_kameniste' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_kameniste">
+          <Key>
+            <PropertyRef Name="id_kamene" />
+          </Key>
+          <Property Name="id_kamene" Type="int" Nullable="false" />
+          <Property Name="id_krabice" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="puvodni_nazev" Type="nvarchar" MaxLength="50" />
+          <Property Name="systemovy_nazev" Type="nvarchar" MaxLength="50" />
+          <Property Name="nazev_kamene" Type="nvarchar" MaxLength="50" />
+          <Property Name="sizeX" Type="int" />
+          <Property Name="sizeY" Type="int" />
+          <Property Name="popis_kamene" Type="ntext" />
+          <Property Name="datum_vlozeni" Type="smalldatetime" />
+          <Property Name="typ_kamene" Type="nvarchar" MaxLength="50" />
+          <Property Name="vyska" Type="nvarchar" MaxLength="50" />
+          <Property Name="sirka" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'www_africatwin_cz.dbo.at_novinky' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="at_novinky">
+          <Property Name="novinka" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="insert_date" Type="datetime" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_odkazy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_odkazy">
+          <Key>
+            <PropertyRef Name="odkaz_id" />
+            <PropertyRef Name="datum" />
+            <PropertyRef Name="active" />
+          </Key>
+          <Property Name="odkaz_id" Type="int" Nullable="false" />
+          <Property Name="adresa" Type="ntext" />
+          <Property Name="popis" Type="ntext" />
+          <Property Name="typ" Type="ntext" />
+          <Property Name="datum" Type="datetime" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="active" Type="int" Nullable="false" />
+          <Property Name="logo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_pokec' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_pokec">
+          <Key>
+            <PropertyRef Name="pokec_id" />
+          </Key>
+          <Property Name="pokec_id" Type="int" Nullable="false" />
+          <Property Name="parent_pokec_id" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="adresat_id" Type="int" />
+          <Property Name="adresat_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="pokec" Type="nvarchar" MaxLength="4000" />
+          <Property Name="jmeno" Type="nvarchar" MaxLength="100" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="datum" Type="datetime" />
+          <Property Name="del" Type="int" />
+          <Property Name="update_date" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_polozky' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_polozky">
+          <Key>
+            <PropertyRef Name="polozka_id" />
+            <PropertyRef Name="insert_date" />
+            <PropertyRef Name="public_date" />
+            <PropertyRef Name="expire_date" />
+          </Key>
+          <Property Name="polozka_id" Type="int" Nullable="false" />
+          <Property Name="kategorie" Type="nvarchar" MaxLength="300" />
+          <Property Name="podkategorie" Type="nvarchar" MaxLength="300" />
+          <Property Name="sablona" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="active" Type="int" />
+          <Property Name="nadpis" Type="ntext" />
+          <Property Name="text" Type="ntext" />
+          <Property Name="insert_date" Type="datetime" Nullable="false" />
+          <Property Name="public_date" Type="datetime" Nullable="false" />
+          <Property Name="expire_date" Type="datetime" Nullable="false" />
+          <Property Name="cena" Type="ntext" />
+          <Property Name="mena" Type="ntext" />
+          <Property Name="title" Type="ntext" />
+          <Property Name="phone" Type="ntext" />
+          <Property Name="email" Type="ntext" />
+          <Property Name="polozka_nad_id" Type="int" />
+          <Property Name="poradi" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_polozky_test' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_polozky_test">
+          <Key>
+            <PropertyRef Name="polozka_id" />
+            <PropertyRef Name="insert_date" />
+            <PropertyRef Name="public_date" />
+            <PropertyRef Name="expire_date" />
+          </Key>
+          <Property Name="polozka_id" Type="int" Nullable="false" />
+          <Property Name="kategorie" Type="nvarchar" MaxLength="300" />
+          <Property Name="podkategorie" Type="nvarchar" MaxLength="300" />
+          <Property Name="sablona" Type="int" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="active" Type="int" />
+          <Property Name="nadpis" Type="ntext" />
+          <Property Name="text" Type="ntext" />
+          <Property Name="insert_date" Type="datetime" Nullable="false" />
+          <Property Name="public_date" Type="datetime" Nullable="false" />
+          <Property Name="expire_date" Type="datetime" Nullable="false" />
+          <Property Name="cena" Type="ntext" />
+          <Property Name="mena" Type="ntext" />
+          <Property Name="title" Type="ntext" />
+          <Property Name="phone" Type="ntext" />
+          <Property Name="email" Type="ntext" />
+          <Property Name="polozka_nad_id" Type="int" />
+          <Property Name="poradi" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'www_africatwin_cz.dbo.at_tricka' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="at_tricka">
+          <Property Name="user_id" Type="int" />
+          <Property Name="tricko" Type="nvarchar" MaxLength="50" />
+          <Property Name="velikost" Type="nvarchar" MaxLength="50" />
+          <Property Name="pocet" Type="int" />
+          <Property Name="insert_date" Type="datetime" />
+          <Property Name="poznamka" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'www_africatwin_cz.dbo.at_users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="at_users">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="overeni_emailu" />
+            <PropertyRef Name="active" />
+            <PropertyRef Name="foto" />
+          </Key>
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="overeni_emailu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="datum_overeni_emailu" Type="datetime" />
+          <Property Name="motocykl" Type="nvarchar" MaxLength="50" />
+          <Property Name="active" Type="int" Nullable="false" />
+          <Property Name="profil" Type="int" />
+          <Property Name="vyroben" Type="nvarchar" MaxLength="50" />
+          <Property Name="jmeno" Type="nvarchar" MaxLength="50" />
+          <Property Name="prijmeni" Type="nvarchar" MaxLength="50" />
+          <Property Name="okres" Type="nvarchar" MaxLength="50" />
+          <Property Name="narozen" Type="nvarchar" MaxLength="50" />
+          <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+          <Property Name="icq" Type="nvarchar" MaxLength="50" />
+          <Property Name="skype" Type="nvarchar" MaxLength="50" />
+          <Property Name="text_moto" Type="ntext" />
+          <Property Name="datum" Type="datetime" />
+          <Property Name="foto_moto" Type="nvarchar" MaxLength="50" />
+          <Property Name="foto_user" Type="nvarchar" MaxLength="50" />
+          <Property Name="foto" Type="int" Nullable="false" />
+          <Property Name="odber_diskuse" Type="nvarchar" MaxLength="50" />
+          <Property Name="www" Type="nvarchar" MaxLength="50" />
+          <Property Name="msn" Type="nvarchar" MaxLength="50" />
+          <Property Name="spz" Type="char" MaxLength="10" />
+          <Property Name="mesto" Type="nvarchar" MaxLength="50" />
+          <Property Name="psc" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="ulice" Type="nvarchar" MaxLength="50" />
+          <Property Name="cp" Type="nvarchar" MaxLength="50" />
+          <Property Name="aktualizace" Type="datetime" />
+          <Property Name="prava" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_profil_foto" Type="nvarchar" MaxLength="50" />
+          <Property Name="gps_lat" Type="nvarchar" MaxLength="50" />
+          <Property Name="gps_lng" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="www_africatwin_czModelStoreContainer">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="at_akce" EntityType="Self.at_akce" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_akce].[id_akce] AS [id_akce], 
+    [at_akce].[nazev] AS [nazev], 
+    [at_akce].[povidani] AS [povidani], 
+    [at_akce].[id_kamene] AS [id_kamene], 
+    [at_akce].[termin_od] AS [termin_od], 
+    [at_akce].[termin_do] AS [termin_do], 
+    [at_akce].[insert_date] AS [insert_date], 
+    [at_akce].[user_id] AS [user_id], 
+    [at_akce].[username] AS [username], 
+    [at_akce].[upoutavka] AS [upoutavka], 
+    [at_akce].[uzavreno] AS [uzavreno], 
+    [at_akce].[formular] AS [formular], 
+    [at_akce].[formular_dny] AS [formular_dny], 
+    [at_akce].[formular_bydleni] AS [formular_bydleni], 
+    [at_akce].[formular_jezdeni] AS [formular_jezdeni], 
+    [at_akce].[data_1] AS [data_1], 
+    [at_akce].[data_2] AS [data_2], 
+    [at_akce].[data_3] AS [data_3], 
+    [at_akce].[data_4] AS [data_4], 
+    [at_akce].[data_5] AS [data_5], 
+    [at_akce].[data_6] AS [data_6], 
+    [at_akce].[data_7] AS [data_7], 
+    [at_akce].[formular_penze] AS [formular_penze], 
+    [at_akce].[formular_deti] AS [formular_deti]
+    FROM [dbo].[at_akce] AS [at_akce]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_atav_ucast" EntityType="Self.at_atav_ucast" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_atav_ucast].[akce] AS [akce], 
+    [at_atav_ucast].[user_id] AS [user_id], 
+    [at_atav_ucast].[pocet_osob] AS [pocet_osob], 
+    [at_atav_ucast].[d_1] AS [d_1], 
+    [at_atav_ucast].[d_2] AS [d_2], 
+    [at_atav_ucast].[d_3] AS [d_3], 
+    [at_atav_ucast].[d_4] AS [d_4], 
+    [at_atav_ucast].[d_5] AS [d_5], 
+    [at_atav_ucast].[d_6] AS [d_6], 
+    [at_atav_ucast].[d_7] AS [d_7], 
+    [at_atav_ucast].[d_8] AS [d_8], 
+    [at_atav_ucast].[d_9] AS [d_9], 
+    [at_atav_ucast].[d_10] AS [d_10], 
+    [at_atav_ucast].[jezdeni] AS [jezdeni], 
+    [at_atav_ucast].[insert_date] AS [insert_date], 
+    [at_atav_ucast].[ubytovani] AS [ubytovani], 
+    [at_atav_ucast].[pocet_deti] AS [pocet_deti], 
+    [at_atav_ucast].[ucast_dny] AS [ucast_dny], 
+    [at_atav_ucast].[penze_dny] AS [penze_dny]
+    FROM [dbo].[at_atav_ucast] AS [at_atav_ucast]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_counter" EntityType="Self.at_counter" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_counter].[count_id] AS [count_id], 
+    [at_counter].[user_id] AS [user_id], 
+    [at_counter].[username] AS [username], 
+    [at_counter].[datum] AS [datum], 
+    [at_counter].[info] AS [info], 
+    [at_counter].[timer_info] AS [timer_info]
+    FROM [dbo].[at_counter] AS [at_counter]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_dokumenty" EntityType="Self.at_dokumenty" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_dokumenty].[id_dokumentu] AS [id_dokumentu], 
+    [at_dokumenty].[id_skupiny] AS [id_skupiny], 
+    [at_dokumenty].[dat_vlozeni] AS [dat_vlozeni], 
+    [at_dokumenty].[nazev] AS [nazev], 
+    [at_dokumenty].[popis] AS [popis], 
+    [at_dokumenty].[nazev_puvodni] AS [nazev_puvodni], 
+    [at_dokumenty].[nazev_systemovy] AS [nazev_systemovy], 
+    [at_dokumenty].[user_id] AS [user_id], 
+    [at_dokumenty].[typ] AS [typ]
+    FROM [dbo].[at_dokumenty] AS [at_dokumenty]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_emaily" EntityType="Self.at_emaily" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_emaily].[email_id] AS [email_id], 
+    [at_emaily].[email] AS [email], 
+    [at_emaily].[jmeno] AS [jmeno], 
+    [at_emaily].[datum] AS [datum]
+    FROM [dbo].[at_emaily] AS [at_emaily]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_hledat" EntityType="Self.at_hledat" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_hledat].[hledat_id] AS [hledat_id], 
+    [at_hledat].[strHledat] AS [strHledat], 
+    [at_hledat].[user_id] AS [user_id], 
+    [at_hledat].[datum] AS [datum]
+    FROM [dbo].[at_hledat] AS [at_hledat]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_hodnoceni" EntityType="Self.at_hodnoceni" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_hodnoceni].[polozka_id] AS [polozka_id], 
+    [at_hodnoceni].[user_id] AS [user_id], 
+    [at_hodnoceni].[polozka_pod_id] AS [polozka_pod_id], 
+    [at_hodnoceni].[insert_date] AS [insert_date], 
+    [at_hodnoceni].[hodnoceni] AS [hodnoceni]
+    FROM [dbo].[at_hodnoceni] AS [at_hodnoceni]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_kameniste" EntityType="Self.at_kameniste" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_kameniste].[id_kamene] AS [id_kamene], 
+    [at_kameniste].[id_krabice] AS [id_krabice], 
+    [at_kameniste].[user_id] AS [user_id], 
+    [at_kameniste].[puvodni_nazev] AS [puvodni_nazev], 
+    [at_kameniste].[systemovy_nazev] AS [systemovy_nazev], 
+    [at_kameniste].[nazev_kamene] AS [nazev_kamene], 
+    [at_kameniste].[sizeX] AS [sizeX], 
+    [at_kameniste].[sizeY] AS [sizeY], 
+    [at_kameniste].[popis_kamene] AS [popis_kamene], 
+    [at_kameniste].[datum_vlozeni] AS [datum_vlozeni], 
+    [at_kameniste].[typ_kamene] AS [typ_kamene], 
+    [at_kameniste].[vyska] AS [vyska], 
+    [at_kameniste].[sirka] AS [sirka]
+    FROM [dbo].[at_kameniste] AS [at_kameniste]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_odkazy" EntityType="Self.at_odkazy" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_odkazy].[odkaz_id] AS [odkaz_id], 
+    [at_odkazy].[adresa] AS [adresa], 
+    [at_odkazy].[popis] AS [popis], 
+    [at_odkazy].[typ] AS [typ], 
+    [at_odkazy].[datum] AS [datum], 
+    [at_odkazy].[username] AS [username], 
+    [at_odkazy].[user_id] AS [user_id], 
+    [at_odkazy].[active] AS [active], 
+    [at_odkazy].[logo] AS [logo]
+    FROM [dbo].[at_odkazy] AS [at_odkazy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_pokec" EntityType="Self.at_pokec" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_pokec].[pokec_id] AS [pokec_id], 
+    [at_pokec].[parent_pokec_id] AS [parent_pokec_id], 
+    [at_pokec].[user_id] AS [user_id], 
+    [at_pokec].[adresat_id] AS [adresat_id], 
+    [at_pokec].[adresat_name] AS [adresat_name], 
+    [at_pokec].[pokec] AS [pokec], 
+    [at_pokec].[jmeno] AS [jmeno], 
+    [at_pokec].[email] AS [email], 
+    [at_pokec].[datum] AS [datum], 
+    [at_pokec].[del] AS [del], 
+    [at_pokec].[update_date] AS [update_date]
+    FROM [dbo].[at_pokec] AS [at_pokec]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_polozky" EntityType="Self.at_polozky" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_polozky].[polozka_id] AS [polozka_id], 
+    [at_polozky].[kategorie] AS [kategorie], 
+    [at_polozky].[podkategorie] AS [podkategorie], 
+    [at_polozky].[sablona] AS [sablona], 
+    [at_polozky].[user_id] AS [user_id], 
+    [at_polozky].[username] AS [username], 
+    [at_polozky].[active] AS [active], 
+    [at_polozky].[nadpis] AS [nadpis], 
+    [at_polozky].[text] AS [text], 
+    [at_polozky].[insert_date] AS [insert_date], 
+    [at_polozky].[public_date] AS [public_date], 
+    [at_polozky].[expire_date] AS [expire_date], 
+    [at_polozky].[cena] AS [cena], 
+    [at_polozky].[mena] AS [mena], 
+    [at_polozky].[title] AS [title], 
+    [at_polozky].[phone] AS [phone], 
+    [at_polozky].[email] AS [email], 
+    [at_polozky].[polozka_nad_id] AS [polozka_nad_id], 
+    [at_polozky].[poradi] AS [poradi]
+    FROM [dbo].[at_polozky] AS [at_polozky]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_polozky_test" EntityType="Self.at_polozky_test" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_polozky_test].[polozka_id] AS [polozka_id], 
+    [at_polozky_test].[kategorie] AS [kategorie], 
+    [at_polozky_test].[podkategorie] AS [podkategorie], 
+    [at_polozky_test].[sablona] AS [sablona], 
+    [at_polozky_test].[user_id] AS [user_id], 
+    [at_polozky_test].[username] AS [username], 
+    [at_polozky_test].[active] AS [active], 
+    [at_polozky_test].[nadpis] AS [nadpis], 
+    [at_polozky_test].[text] AS [text], 
+    [at_polozky_test].[insert_date] AS [insert_date], 
+    [at_polozky_test].[public_date] AS [public_date], 
+    [at_polozky_test].[expire_date] AS [expire_date], 
+    [at_polozky_test].[cena] AS [cena], 
+    [at_polozky_test].[mena] AS [mena], 
+    [at_polozky_test].[title] AS [title], 
+    [at_polozky_test].[phone] AS [phone], 
+    [at_polozky_test].[email] AS [email], 
+    [at_polozky_test].[polozka_nad_id] AS [polozka_nad_id], 
+    [at_polozky_test].[poradi] AS [poradi]
+    FROM [dbo].[at_polozky_test] AS [at_polozky_test]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="at_users" EntityType="Self.at_users" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [at_users].[user_id] AS [user_id], 
+    [at_users].[username] AS [username], 
+    [at_users].[password] AS [password], 
+    [at_users].[email] AS [email], 
+    [at_users].[overeni_emailu] AS [overeni_emailu], 
+    [at_users].[datum_overeni_emailu] AS [datum_overeni_emailu], 
+    [at_users].[motocykl] AS [motocykl], 
+    [at_users].[active] AS [active], 
+    [at_users].[profil] AS [profil], 
+    [at_users].[vyroben] AS [vyroben], 
+    [at_users].[jmeno] AS [jmeno], 
+    [at_users].[prijmeni] AS [prijmeni], 
+    [at_users].[okres] AS [okres], 
+    [at_users].[narozen] AS [narozen], 
+    [at_users].[telefon] AS [telefon], 
+    [at_users].[icq] AS [icq], 
+    [at_users].[skype] AS [skype], 
+    [at_users].[text_moto] AS [text_moto], 
+    [at_users].[datum] AS [datum], 
+    [at_users].[foto_moto] AS [foto_moto], 
+    [at_users].[foto_user] AS [foto_user], 
+    [at_users].[foto] AS [foto], 
+    [at_users].[odber_diskuse] AS [odber_diskuse], 
+    [at_users].[www] AS [www], 
+    [at_users].[msn] AS [msn], 
+    [at_users].[spz] AS [spz], 
+    [at_users].[mesto] AS [mesto], 
+    [at_users].[psc] AS [psc], 
+    [at_users].[ulice] AS [ulice], 
+    [at_users].[cp] AS [cp], 
+    [at_users].[aktualizace] AS [aktualizace], 
+    [at_users].[prava] AS [prava], 
+    [at_users].[user_profil_foto] AS [user_profil_foto], 
+    [at_users].[gps_lat] AS [gps_lat], 
+    [at_users].[gps_lng] AS [gps_lng]
+    FROM [dbo].[at_users] AS [at_users]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="www_africatwin_czModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User_Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Discriminator" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="at_akce">
+          <Key>
+            <PropertyRef Name="id_akce" />
+            <PropertyRef Name="insert_date" />
+          </Key>
+          <Property Name="id_akce" Type="Int32" Nullable="false" />
+          <Property Name="nazev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="povidani" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id_kamene" Type="Int32" />
+          <Property Name="termin_od" Type="DateTime" Precision="3" />
+          <Property Name="termin_do" Type="DateTime" Precision="3" />
+          <Property Name="insert_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="upoutavka" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="uzavreno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="formular" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="formular_dny" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="formular_bydleni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="formular_jezdeni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="data_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="data_6" Type="Int32" />
+          <Property Name="data_7" Type="DateTime" Precision="3" />
+          <Property Name="formular_penze" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="formular_deti" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="at_atav_ucast">
+          <Key>
+            <PropertyRef Name="akce" />
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="akce" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="pocet_osob" Type="Int32" />
+          <Property Name="d_1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="d_10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jezdeni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="insert_date" Type="DateTime" Precision="3" />
+          <Property Name="ubytovani" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pocet_deti" Type="Int32" />
+          <Property Name="ucast_dny" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="penze_dny" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="at_counter">
+          <Key>
+            <PropertyRef Name="count_id" />
+            <PropertyRef Name="datum" />
+          </Key>
+          <Property Name="count_id" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="info" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="timer_info" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="at_dokumenty">
+          <Key>
+            <PropertyRef Name="id_dokumentu" />
+            <PropertyRef Name="id_skupiny" />
+            <PropertyRef Name="dat_vlozeni" />
+          </Key>
+          <Property Name="id_dokumentu" Type="Int32" Nullable="false" />
+          <Property Name="id_skupiny" Type="Int32" Nullable="false" />
+          <Property Name="dat_vlozeni" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="nazev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="popis" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="nazev_puvodni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nazev_systemovy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="typ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="at_emaily">
+          <Key>
+            <PropertyRef Name="email_id" />
+            <PropertyRef Name="datum" />
+          </Key>
+          <Property Name="email_id" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="jmeno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="at_hledat">
+          <Key>
+            <PropertyRef Name="hledat_id" />
+          </Key>
+          <Property Name="hledat_id" Type="Int32" Nullable="false" />
+          <Property Name="strHledat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="datum" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="at_hodnoceni">
+          <Key>
+            <PropertyRef Name="polozka_id" />
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="polozka_id" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="polozka_pod_id" Type="Int32" />
+          <Property Name="insert_date" Type="DateTime" Precision="3" />
+          <Property Name="hodnoceni" Type="Int32" />
+        </EntityType>
+        <EntityType Name="at_kameniste">
+          <Key>
+            <PropertyRef Name="id_kamene" />
+          </Key>
+          <Property Name="id_kamene" Type="Int32" Nullable="false" />
+          <Property Name="id_krabice" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="puvodni_nazev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="systemovy_nazev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nazev_kamene" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sizeX" Type="Int32" />
+          <Property Name="sizeY" Type="Int32" />
+          <Property Name="popis_kamene" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="datum_vlozeni" Type="DateTime" Precision="0" />
+          <Property Name="typ_kamene" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vyska" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sirka" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="at_odkazy">
+          <Key>
+            <PropertyRef Name="odkaz_id" />
+            <PropertyRef Name="datum" />
+            <PropertyRef Name="active" />
+          </Key>
+          <Property Name="odkaz_id" Type="Int32" Nullable="false" />
+          <Property Name="adresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="popis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="typ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="datum" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="Int32" Nullable="false" />
+          <Property Name="logo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="at_pokec">
+          <Key>
+            <PropertyRef Name="pokec_id" />
+          </Key>
+          <Property Name="pokec_id" Type="Int32" Nullable="false" />
+          <Property Name="parent_pokec_id" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="adresat_id" Type="Int32" />
+          <Property Name="adresat_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pokec" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="jmeno" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="datum" Type="DateTime" Precision="3" />
+          <Property Name="del" Type="Int32" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="at_polozky">
+          <Key>
+            <PropertyRef Name="polozka_id" />
+            <PropertyRef Name="insert_date" />
+            <PropertyRef Name="public_date" />
+            <PropertyRef Name="expire_date" />
+          </Key>
+          <Property Name="polozka_id" Type="Int32" Nullable="false" />
+          <Property Name="kategorie" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="podkategorie" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="sablona" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="Int32" />
+          <Property Name="nadpis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="insert_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="public_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="expire_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="polozka_nad_id" Type="Int32" />
+          <Property Name="poradi" Type="Int32" />
+        </EntityType>
+        <EntityType Name="at_polozky_test">
+          <Key>
+            <PropertyRef Name="polozka_id" />
+            <PropertyRef Name="insert_date" />
+            <PropertyRef Name="public_date" />
+            <PropertyRef Name="expire_date" />
+          </Key>
+          <Property Name="polozka_id" Type="Int32" Nullable="false" />
+          <Property Name="kategorie" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="podkategorie" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="sablona" Type="Int32" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="Int32" />
+          <Property Name="nadpis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="insert_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="public_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="expire_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mena" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="polozka_nad_id" Type="Int32" />
+          <Property Name="poradi" Type="Int32" />
+        </EntityType>
+        <EntityType Name="at_users">
+          <Key>
+            <PropertyRef Name="user_id" />
+            <PropertyRef Name="overeni_emailu" />
+            <PropertyRef Name="active" />
+            <PropertyRef Name="foto" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="overeni_emailu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="datum_overeni_emailu" Type="DateTime" Precision="3" />
+          <Property Name="motocykl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="active" Type="Int32" Nullable="false" />
+          <Property Name="profil" Type="Int32" />
+          <Property Name="vyroben" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="jmeno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="prijmeni" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="okres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="narozen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="icq" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="skype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="text_moto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="datum" Type="DateTime" Precision="3" />
+          <Property Name="foto_moto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="foto_user" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="foto" Type="Int32" Nullable="false" />
+          <Property Name="odber_diskuse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="www" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="msn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="spz" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="mesto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="psc" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ulice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cp" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="aktualizace" Type="DateTime" Precision="3" />
+          <Property Name="prava" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_profil_foto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gps_lat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gps_lng" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="User_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="www_africatwin_czEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="at_akce" EntityType="Self.at_akce" />
+          <EntitySet Name="at_atav_ucast" EntityType="Self.at_atav_ucast" />
+          <EntitySet Name="at_counter" EntityType="Self.at_counter" />
+          <EntitySet Name="at_dokumenty" EntityType="Self.at_dokumenty" />
+          <EntitySet Name="at_emaily" EntityType="Self.at_emaily" />
+          <EntitySet Name="at_hledat" EntityType="Self.at_hledat" />
+          <EntitySet Name="at_hodnoceni" EntityType="Self.at_hodnoceni" />
+          <EntitySet Name="at_kameniste" EntityType="Self.at_kameniste" />
+          <EntitySet Name="at_odkazy" EntityType="Self.at_odkazy" />
+          <EntitySet Name="at_pokec" EntityType="Self.at_pokec" />
+          <EntitySet Name="at_polozky" EntityType="Self.at_polozky" />
+          <EntitySet Name="at_polozky_test" EntityType="Self.at_polozky_test" />
+          <EntitySet Name="at_users" EntityType="Self.at_users" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_User_Id">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="www_africatwin_czModelStoreContainer" CdmEntityContainer="www_africatwin_czEntities">
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_akce">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_akce">
+              <MappingFragment StoreEntitySet="at_akce">
+                <ScalarProperty Name="id_akce" ColumnName="id_akce" />
+                <ScalarProperty Name="nazev" ColumnName="nazev" />
+                <ScalarProperty Name="povidani" ColumnName="povidani" />
+                <ScalarProperty Name="id_kamene" ColumnName="id_kamene" />
+                <ScalarProperty Name="termin_od" ColumnName="termin_od" />
+                <ScalarProperty Name="termin_do" ColumnName="termin_do" />
+                <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="upoutavka" ColumnName="upoutavka" />
+                <ScalarProperty Name="uzavreno" ColumnName="uzavreno" />
+                <ScalarProperty Name="formular" ColumnName="formular" />
+                <ScalarProperty Name="formular_dny" ColumnName="formular_dny" />
+                <ScalarProperty Name="formular_bydleni" ColumnName="formular_bydleni" />
+                <ScalarProperty Name="formular_jezdeni" ColumnName="formular_jezdeni" />
+                <ScalarProperty Name="data_1" ColumnName="data_1" />
+                <ScalarProperty Name="data_2" ColumnName="data_2" />
+                <ScalarProperty Name="data_3" ColumnName="data_3" />
+                <ScalarProperty Name="data_4" ColumnName="data_4" />
+                <ScalarProperty Name="data_5" ColumnName="data_5" />
+                <ScalarProperty Name="data_6" ColumnName="data_6" />
+                <ScalarProperty Name="data_7" ColumnName="data_7" />
+                <ScalarProperty Name="formular_penze" ColumnName="formular_penze" />
+                <ScalarProperty Name="formular_deti" ColumnName="formular_deti" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_atav_ucast">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_atav_ucast">
+              <MappingFragment StoreEntitySet="at_atav_ucast">
+                <ScalarProperty Name="akce" ColumnName="akce" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="pocet_osob" ColumnName="pocet_osob" />
+                <ScalarProperty Name="d_1" ColumnName="d_1" />
+                <ScalarProperty Name="d_2" ColumnName="d_2" />
+                <ScalarProperty Name="d_3" ColumnName="d_3" />
+                <ScalarProperty Name="d_4" ColumnName="d_4" />
+                <ScalarProperty Name="d_5" ColumnName="d_5" />
+                <ScalarProperty Name="d_6" ColumnName="d_6" />
+                <ScalarProperty Name="d_7" ColumnName="d_7" />
+                <ScalarProperty Name="d_8" ColumnName="d_8" />
+                <ScalarProperty Name="d_9" ColumnName="d_9" />
+                <ScalarProperty Name="d_10" ColumnName="d_10" />
+                <ScalarProperty Name="jezdeni" ColumnName="jezdeni" />
+                <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+                <ScalarProperty Name="ubytovani" ColumnName="ubytovani" />
+                <ScalarProperty Name="pocet_deti" ColumnName="pocet_deti" />
+                <ScalarProperty Name="ucast_dny" ColumnName="ucast_dny" />
+                <ScalarProperty Name="penze_dny" ColumnName="penze_dny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_counter">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_counter">
+              <MappingFragment StoreEntitySet="at_counter">
+                <ScalarProperty Name="count_id" ColumnName="count_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="info" ColumnName="info" />
+                <ScalarProperty Name="timer_info" ColumnName="timer_info" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_dokumenty">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_dokumenty">
+              <MappingFragment StoreEntitySet="at_dokumenty">
+                <ScalarProperty Name="id_dokumentu" ColumnName="id_dokumentu" />
+                <ScalarProperty Name="id_skupiny" ColumnName="id_skupiny" />
+                <ScalarProperty Name="dat_vlozeni" ColumnName="dat_vlozeni" />
+                <ScalarProperty Name="nazev" ColumnName="nazev" />
+                <ScalarProperty Name="popis" ColumnName="popis" />
+                <ScalarProperty Name="nazev_puvodni" ColumnName="nazev_puvodni" />
+                <ScalarProperty Name="nazev_systemovy" ColumnName="nazev_systemovy" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="typ" ColumnName="typ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_emaily">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_emaily">
+              <MappingFragment StoreEntitySet="at_emaily">
+                <ScalarProperty Name="email_id" ColumnName="email_id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="jmeno" ColumnName="jmeno" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_hledat">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_hledat">
+              <MappingFragment StoreEntitySet="at_hledat">
+                <ScalarProperty Name="hledat_id" ColumnName="hledat_id" />
+                <ScalarProperty Name="strHledat" ColumnName="strHledat" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_hodnoceni">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_hodnoceni">
+              <MappingFragment StoreEntitySet="at_hodnoceni">
+                <ScalarProperty Name="polozka_id" ColumnName="polozka_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="polozka_pod_id" ColumnName="polozka_pod_id" />
+                <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+                <ScalarProperty Name="hodnoceni" ColumnName="hodnoceni" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_kameniste">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_kameniste">
+              <MappingFragment StoreEntitySet="at_kameniste">
+                <ScalarProperty Name="id_kamene" ColumnName="id_kamene" />
+                <ScalarProperty Name="id_krabice" ColumnName="id_krabice" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="puvodni_nazev" ColumnName="puvodni_nazev" />
+                <ScalarProperty Name="systemovy_nazev" ColumnName="systemovy_nazev" />
+                <ScalarProperty Name="nazev_kamene" ColumnName="nazev_kamene" />
+                <ScalarProperty Name="sizeX" ColumnName="sizeX" />
+                <ScalarProperty Name="sizeY" ColumnName="sizeY" />
+                <ScalarProperty Name="popis_kamene" ColumnName="popis_kamene" />
+                <ScalarProperty Name="datum_vlozeni" ColumnName="datum_vlozeni" />
+                <ScalarProperty Name="typ_kamene" ColumnName="typ_kamene" />
+                <ScalarProperty Name="vyska" ColumnName="vyska" />
+                <ScalarProperty Name="sirka" ColumnName="sirka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_odkazy">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_odkazy">
+              <MappingFragment StoreEntitySet="at_odkazy">
+                <ScalarProperty Name="odkaz_id" ColumnName="odkaz_id" />
+                <ScalarProperty Name="adresa" ColumnName="adresa" />
+                <ScalarProperty Name="popis" ColumnName="popis" />
+                <ScalarProperty Name="typ" ColumnName="typ" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_pokec">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_pokec">
+              <MappingFragment StoreEntitySet="at_pokec">
+                <ScalarProperty Name="pokec_id" ColumnName="pokec_id" />
+                <ScalarProperty Name="parent_pokec_id" ColumnName="parent_pokec_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="adresat_id" ColumnName="adresat_id" />
+                <ScalarProperty Name="adresat_name" ColumnName="adresat_name" />
+                <ScalarProperty Name="pokec" ColumnName="pokec" />
+                <ScalarProperty Name="jmeno" ColumnName="jmeno" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="del" ColumnName="del" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_polozky">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_polozky">
+              <MappingFragment StoreEntitySet="at_polozky">
+                <ScalarProperty Name="polozka_id" ColumnName="polozka_id" />
+                <ScalarProperty Name="kategorie" ColumnName="kategorie" />
+                <ScalarProperty Name="podkategorie" ColumnName="podkategorie" />
+                <ScalarProperty Name="sablona" ColumnName="sablona" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="nadpis" ColumnName="nadpis" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+                <ScalarProperty Name="public_date" ColumnName="public_date" />
+                <ScalarProperty Name="expire_date" ColumnName="expire_date" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+                <ScalarProperty Name="mena" ColumnName="mena" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="polozka_nad_id" ColumnName="polozka_nad_id" />
+                <ScalarProperty Name="poradi" ColumnName="poradi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_polozky_test">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_polozky_test">
+              <MappingFragment StoreEntitySet="at_polozky_test">
+                <ScalarProperty Name="polozka_id" ColumnName="polozka_id" />
+                <ScalarProperty Name="kategorie" ColumnName="kategorie" />
+                <ScalarProperty Name="podkategorie" ColumnName="podkategorie" />
+                <ScalarProperty Name="sablona" ColumnName="sablona" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="nadpis" ColumnName="nadpis" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+                <ScalarProperty Name="public_date" ColumnName="public_date" />
+                <ScalarProperty Name="expire_date" ColumnName="expire_date" />
+                <ScalarProperty Name="cena" ColumnName="cena" />
+                <ScalarProperty Name="mena" ColumnName="mena" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="polozka_nad_id" ColumnName="polozka_nad_id" />
+                <ScalarProperty Name="poradi" ColumnName="poradi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="at_users">
+            <EntityTypeMapping TypeName="www_africatwin_czModel.at_users">
+              <MappingFragment StoreEntitySet="at_users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="overeni_emailu" ColumnName="overeni_emailu" />
+                <ScalarProperty Name="datum_overeni_emailu" ColumnName="datum_overeni_emailu" />
+                <ScalarProperty Name="motocykl" ColumnName="motocykl" />
+                <ScalarProperty Name="active" ColumnName="active" />
+                <ScalarProperty Name="profil" ColumnName="profil" />
+                <ScalarProperty Name="vyroben" ColumnName="vyroben" />
+                <ScalarProperty Name="jmeno" ColumnName="jmeno" />
+                <ScalarProperty Name="prijmeni" ColumnName="prijmeni" />
+                <ScalarProperty Name="okres" ColumnName="okres" />
+                <ScalarProperty Name="narozen" ColumnName="narozen" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="icq" ColumnName="icq" />
+                <ScalarProperty Name="skype" ColumnName="skype" />
+                <ScalarProperty Name="text_moto" ColumnName="text_moto" />
+                <ScalarProperty Name="datum" ColumnName="datum" />
+                <ScalarProperty Name="foto_moto" ColumnName="foto_moto" />
+                <ScalarProperty Name="foto_user" ColumnName="foto_user" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="odber_diskuse" ColumnName="odber_diskuse" />
+                <ScalarProperty Name="www" ColumnName="www" />
+                <ScalarProperty Name="msn" ColumnName="msn" />
+                <ScalarProperty Name="spz" ColumnName="spz" />
+                <ScalarProperty Name="mesto" ColumnName="mesto" />
+                <ScalarProperty Name="psc" ColumnName="psc" />
+                <ScalarProperty Name="ulice" ColumnName="ulice" />
+                <ScalarProperty Name="cp" ColumnName="cp" />
+                <ScalarProperty Name="aktualizace" ColumnName="aktualizace" />
+                <ScalarProperty Name="prava" ColumnName="prava" />
+                <ScalarProperty Name="user_profil_foto" ColumnName="user_profil_foto" />
+                <ScalarProperty Name="gps_lat" ColumnName="gps_lat" />
+                <ScalarProperty Name="gps_lng" ColumnName="gps_lng" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="www_africatwin_czModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

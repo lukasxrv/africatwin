@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -165,6 +167,72 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\africatwin.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>africatwin.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\africatwin.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\africatwin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>africatwin.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetRoles.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaims.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogins.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_akce.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_atav_ucast.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_counter.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_dokumenty.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_emaily.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_hledat.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_hodnoceni.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_kameniste.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_odkazy.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_pokec.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_polozky.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_polozky_test.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\at_users.cs">
+      <DependentUpon>africatwin.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -178,6 +246,23 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\africatwin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>africatwin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\africatwin.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>africatwin.edmx</DependentUpon>
+      <LastGenOutput>africatwin.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\africatwin.edmx.diagram">
+      <DependentUpon>africatwin.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\africatwin.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>africatwin.edmx</DependentUpon>
+      <LastGenOutput>africatwin.cs</LastGenOutput>
+    </Content>
     <None Include="Properties\PublishProfiles\testASPone.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -227,6 +312,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
