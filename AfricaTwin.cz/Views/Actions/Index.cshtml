@@ -1,0 +1,159 @@
+﻿@model IEnumerable<AfricaTwin.cz.Models.at_akce>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nazev)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.povidani)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_kamene)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.termin_od)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.termin_do)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.upoutavka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.uzavreno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formular_dny)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formular_bydleni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formular_jezdeni)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_6)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_7)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formular_penze)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formular_deti)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nazev)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.povidani)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_kamene)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.termin_od)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.termin_do)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.upoutavka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.uzavreno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formular_dny)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formular_bydleni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formular_jezdeni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_6)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.data_7)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formular_penze)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formular_deti)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
