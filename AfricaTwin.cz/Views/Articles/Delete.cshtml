@@ -1,0 +1,144 @@
+﻿@model AfricaTwin.cz.Models.at_polozky
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>at_polozky</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.kategorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kategorie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.podkategorie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.podkategorie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sablona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sablona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.active)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nadpis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nadpis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.text)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.text)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.polozka_nad_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.polozka_nad_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.poradi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.poradi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

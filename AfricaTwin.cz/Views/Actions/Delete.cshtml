@@ -1,0 +1,200 @@
+﻿@model AfricaTwin.cz.Models.at_akce
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>at_akce</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nazev)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nazev)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.povidani)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.povidani)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_kamene)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_kamene)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.termin_od)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.termin_od)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.termin_do)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.termin_do)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.user_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.user_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.upoutavka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.upoutavka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uzavreno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uzavreno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formular_dny)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formular_dny)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formular_bydleni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formular_bydleni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formular_jezdeni)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formular_jezdeni)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formular_penze)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formular_penze)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formular_deti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formular_deti)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
