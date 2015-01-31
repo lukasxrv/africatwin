@@ -1,9 +1,18 @@
 ﻿
+@model IEnumerable<AfricaTwin.cz.Models.at_pokec>
+
 @{
     ViewBag.Title = "TechBox";
 }
 
 <h2>TechBox</h2>
 
-<p>V techboxu je celkem @ViewBag.PocetPolozek záznamů!</p>
+<p>V diskuzi je celkem @ViewBag.PocetPolozek záznamů!</p>
+
+@foreach(var p in Model)
+{
+    <div>
+       <p class="pokec">@p.pokec</p>
+    </div>
+}
 

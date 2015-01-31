@@ -12,15 +12,15 @@ namespace AfricaTwin.cz.Controllers
     {
         //
         // GET: /TechBox/
-        public ActionResult TechBox()
+        public ActionResult TechBox(int stranka)
         {
             www_africatwin_czEntities atDB = new www_africatwin_czEntities();
 
-            int pocetZaznamuTechBoxu = atDB.at_polozky.Where(p => p.kategorie.StartsWith("techbox")).Count();
+            var model = atDB.at_pokec.OrderByDescending(p => p.datum).Skip(stranka).Take(20);
 
-            ViewBag.PocetPolozek = pocetZaznamuTechBoxu;
+            ViewBag.PocetPolozek = model.Count();
             
-            return View();
+            return View(model);
         }
 	}
 }

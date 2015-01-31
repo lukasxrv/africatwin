@@ -15,14 +15,14 @@ namespace AfricaTwin.cz.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Informace o tomto webu";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Informace o provozovateli a kontaktech";
 
             return View();
         }
